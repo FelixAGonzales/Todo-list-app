@@ -10,10 +10,12 @@ export default {
   <div>
     <h1>To do List</h1>
     <div v-for="photo in photos" v-bind:key="photo.id">
-      <h2>{{ photo.name }}</h2>
-      <img v-bind:src="photo.url" />
-      <p>Width: {{ photo.width }}</p>
-      <p>Height: {{ photo.height }}</p>
+      <h2>{{ photo.category }}</h2>
+      <p>Title: {{ photo.title }}</p>
+      <p>Date: {{ photo.date }}</p>
+      <p>Description: {{ photo.description }}</p>
+      <p>Status: {{ photo.status }}</p>
+      <button v-on:click="$emit('showPhoto', photo)">More Info</button>
     </div>
   </div>
 </template>
